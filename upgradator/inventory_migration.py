@@ -7,7 +7,7 @@ It is specially usefull when you need to analyse a module in OpenERP or
 Openerp Community and then, understand what you need to test,
 even before install it.
 
-If you have Technical Knoledge it can be used mixed with other script
+If you have Technical Knowledge it can be used mixed with other script
 to automigrate your module.
 
 TODO: Auto apply pep8.
@@ -15,10 +15,8 @@ TODO: Modify what is obvious must be modified.
 '''
 
 import os
-import sys
 import logging
 import argparse
-import logging
 import commands
 import migrate_V7
 import migrate_view
@@ -42,16 +40,11 @@ args = parser.parse_args()
 
 if args.pep:
     try:
-        '''
-        Verify that are installed the necesary libraries
-        '''
         import pep8
         import autopep8
-
     except:
-
         logging.warning(
-            'To check and apply pep8 style you need install the libreries pep8 and autopep8 sudo pip install pep8 autopep8 ')
+            'To check and apply pep8 style you need install the libraries pep8 and autopep8 sudo pip install pep8 autopep8 ')
 
 
 def main(path, ext, migrate, view):
@@ -164,12 +157,10 @@ def main(path, ext, migrate, view):
 
 def has_comment(string, tp=None):
     '''
-    Verify if the field or methos have their help and comment
+    Verify if the field or method have their help and comment
     '''
     if tp == 'field':
-
         return string.find('help') >= 0 and True or False
-
     return False
 
 
@@ -290,15 +281,6 @@ def is_view(lineofcode):
     Line with xml code with a view
     '''
     if lineofcode.find('ir.ui.view') > 0:
-        return True
-    return False
-
-
-def is_menu(lineofcode):
-    '''
-    Line with xml code with a menu
-    '''
-    if lineofcode.find('menuitem') > 0:
         return True
     return False
 
