@@ -14,6 +14,7 @@ Contents:
    readme
    installation
    usage
+   upgradator
    contributing
    authors
    history
