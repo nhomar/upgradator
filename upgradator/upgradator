@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 '''
 This Script can help you to verify the impact of migrate a module
 from one version to another in terms of how much models you need to verify
