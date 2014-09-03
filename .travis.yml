@@ -15,11 +15,7 @@ install: pip install -r requirements.txt
 # command to run tests, e.g. python setup.py test
 script:
 - python setup.py test
-
-# command to compile documentation.
-branches:
-  only:
-  - develop
-after_success:
+# Testing docs are correctly working
 - cd docs
 - make html
+
