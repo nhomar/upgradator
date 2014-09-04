@@ -18,7 +18,7 @@ TODO: Modify what is obvious must be modified.
 import os
 import commands
 
-def main(path, ext, migrate, view):
+def main(path, ext, migrate, view, args):
     '''
     Walk trought a folder and count lines with python code and some other
     features
@@ -54,8 +54,7 @@ def main(path, ext, migrate, view):
         for filei in [f for f in files if f.lower().endswith(ext)]:
             completepath = os.path.join(root, filei)
             if migrate and '.py' in filei:
-                print "TODO"
-                #migrate.main(completepath, args.migrate)
+                migrate.main(completepath, args.migrate)
             script = open(completepath)
             scripts = script.read()
             script.close()
@@ -67,8 +66,7 @@ def main(path, ext, migrate, view):
 
                 check = check_pep(completepath)
                 check and counter['pep'].append(filei)
-                # TODO: if args.pep and check:
-                if True:
+                if args.pep and check:
                     check = apply_pep(completepath)
                     check and \
                         counter['pep_n_solved'].append(filei) or not \
@@ -79,9 +77,7 @@ def main(path, ext, migrate, view):
                                                      'all',
                                                      ['res.partner.address'])
                 if view:
-                    #TODO view.modify_arch(completepath, args.views)
-                    print "view.modify_arch(completepath, args.views)"
-
+                    view.modify_arch(completepath, args.views)
                     if depreciated_view:
                         counter['mistake_view'].append(depreciated_view)
                         depreciated_view = False
