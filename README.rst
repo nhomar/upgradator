@@ -16,6 +16,7 @@ Little set of tools to upgrade the code for odoo modules
 
 * Free software: BSD license
 * Documentation: https://upgradator.readthedocs.org.
+* We use git-flow from [here](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
 
 Features
 --------
